@@ -19,9 +19,6 @@ function reverse(str) {
   return reverse(str.slice(1)) + str[0]
 }
 
-console.log(reverse("house"));
-console.log(reverse("dog"));
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = reverse;

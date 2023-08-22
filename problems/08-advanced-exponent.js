@@ -40,8 +40,15 @@ times `advancedExponent` is being recursively called.
 ***********************************************************************/
 
 
-function advancedExponent(b, n) {
-  // Your code here 
+function advancedExponent(num, power, init=num) {
+  if(!power || power > 99) return 1
+  let negativePower = power < 0
+  if(negativePower) {
+      power = Math.abs(power)
+      num = 1/num
+  }
+  if(power<=1) return num
+  return advancedExponent(num*(negativePower?1/init:init), --power, init)
 }
 
 

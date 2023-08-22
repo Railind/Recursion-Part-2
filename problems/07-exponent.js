@@ -20,10 +20,17 @@ exponent(2, -2); // 1/4 (or 0.25)
 exponent(5, 5); // 3125
 ***********************************************************************/
 
-function exponent(num, power) {
-    // Your code here 
+function exponent(num, power, init=num) {
+    if(!power) return 1
+    let negativePower = power < 0
+    if(negativePower) {
+        power = Math.abs(power)
+        num = 1/num
+    }
+    if(power<=1) return num
+    return exponent(num*(negativePower?1/init:init), --power, init)
 }
-  
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
     module.exports = exponent;

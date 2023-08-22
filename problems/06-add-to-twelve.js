@@ -17,11 +17,6 @@ function addToTwelve(arr) {
   return (arr.slice(0, 2).reduce((a, b) => a + b, 0) === 12) || addToTwelve(arr.slice(1))
 }
 
-
-console.log(addToTwelve([1, 3, 4, 7, 5])); // true
-// addToTwelve([1, 3, 4, 7, 6]); // false
-
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = addToTwelve;
