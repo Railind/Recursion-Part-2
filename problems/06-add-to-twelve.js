@@ -14,8 +14,17 @@ addToTwelve([1]); // false
 
 
 function addToTwelve(arr) {
-  // Your code here 
+  // Your code here
+  if (!arr.length) return 0
+  console.log(arr);
+  console.log(arr.slice(1) + '*')
+  console.log(arr.slice(1)[1] + '**')
+  return addToTwelve(arr.slice(1)[1]) + arr[0] === 12
 }
+
+
+console.log(addToTwelve([1, 3, 4, 7, 5])); // true
+// addToTwelve([1, 3, 4, 7, 6]); // false
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
