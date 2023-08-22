@@ -12,14 +12,9 @@ addToTwelve([1, 12, 4, 7, 6]); // false
 addToTwelve([1]); // false
 ***********************************************************************/
 
-
 function addToTwelve(arr) {
-  // Your code here
-  if (!arr.length) return 0
-  console.log(arr);
-  console.log(arr.slice(1) + '*')
-  console.log(arr.slice(1)[1] + '**')
-  return addToTwelve(arr.slice(1)[1]) + arr[0] === 12
+  if (!arr.length) return false
+  return (arr.slice(0, 2).reduce((a, b) => a + b, 0) === 12) || addToTwelve(arr.slice(1))
 }
 
 
